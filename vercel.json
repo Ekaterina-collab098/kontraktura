@@ -2,7 +2,7 @@
   "version": 2,
   "functions": {
     "api/[...path].js": {
-      "includeFiles": ["data/demo-catalog.json"]
+      "includeFiles": "data/demo-catalog.json"
     }
   }
 }
