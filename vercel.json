@@ -1,8 +1,14 @@
 {
   "version": 2,
-  "functions": {
-    "api/[...path].js": {
-      "includeFiles": "data/demo-catalog.json"
-    }
-  }
+  "builds": [
+    { "src": "api/index.js", "use": "@vercel/node", "config": { "includeFiles": "data/demo-catalog.json" } },
+    { "src": "index.html", "use": "@vercel/static" },
+    { "src": "app.js", "use": "@vercel/static" },
+    { "src": "styles.css", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "^/api(?:/.*)?$", "dest": "/api/index.js" },
+    { "src": "^/$", "dest": "/index.html" },
+    { "src": "^/(app\\.js|styles\\.css)$", "dest": "/$1" }
+  ]
 }
