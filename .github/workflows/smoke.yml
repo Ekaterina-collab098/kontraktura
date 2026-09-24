@@ -14,3 +14,4 @@ jobs:
           curl --fail --show-error --location --retry 3 --retry-delay 5 https://kontraktura.vercel.app/app.js | grep -q 'downloadWord'
           curl --fail --show-error --location --retry 3 --retry-delay 5 https://kontraktura.vercel.app/api/status | grep -q '"cards"'
           curl --fail --show-error --location --retry 3 --retry-delay 5 'https://kontraktura.vercel.app/api/catalog?q=mic' | grep -q '"items"'
+          curl --fail --show-error --location --retry 3 --retry-delay 5 -X POST -H 'content-type: application/json' -d '{"text":"ПРОЕКТ ОПИСАНИЯ"}' https://kontraktura.vercel.app/api/document | head -c 2 | grep -q PK
