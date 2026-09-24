@@ -1,0 +1,14 @@
+{
+  "name": "kontraktura",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Помощник заказчика по 44-ФЗ с версионированием КТРУ",
+  "scripts": {
+    "start": "node server.js",
+    "import": "node scripts/import-ktru.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  }
+}
